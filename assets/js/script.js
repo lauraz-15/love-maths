@@ -50,6 +50,7 @@ function checkAnswer() {
 
     if (isCorrect) {
         alert("Hey! You got it right! :D");
+        incrementScore();
     } else {
         alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
     }
@@ -78,11 +79,13 @@ function calculateCorrectAnswer() {
 }
 
 function incrementScore() {
-
+ let score = parseInt(document.getElementById("score")).innerText;
+ document.getElementById("score").innerText = ++score;
 }
 
 function incrementWrongAnswer() {
-
+    let incorrectScore = parseInt(document.getElementById("incorrect")).innerText;
+ document.getElementById("incorrect").innerText = ++incorrectScore;
 }
 
 function displayAdditionQuestion(operand1, operand2) {
